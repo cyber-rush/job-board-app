@@ -20,6 +20,7 @@ const JobBoard = () => {
             const startIndex = (currentPage - 1) * 6;
             const endIndex = startIndex + 6;
             const jobPromises = jobIds.slice(startIndex, endIndex).map(jobId => fetchJobDetails(jobId));
+            // eslint-disable-next-line no-undef
             const jobDetails = await Promise.all(jobPromises);
             setJobPostings([...jobPostings, ...jobDetails]);
 
